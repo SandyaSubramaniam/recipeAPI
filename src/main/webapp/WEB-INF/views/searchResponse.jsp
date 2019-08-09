@@ -8,7 +8,17 @@
 <title>Display Results</title>
 </head>
 <body>
+
+<h1>Recipe List</h1>
+
 	<table border=1>
+	<thead>
+		<tr>
+			<th>Image</th>
+			<th>Title</th>
+			<th>Calories</th>
+		</tr>
+	</thead>
 	
 		<c:forEach var="hit" items="${response}">
 			<tr>
