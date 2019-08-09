@@ -1,11 +1,14 @@
 package co.grandcircus.recipeAPI;
 
+import java.util.List;
+
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import co.grandcircus.recipeAPI.entities.Hit;
 import co.grandcircus.recipeAPI.entities.SearchResponse;
 
 @Component
@@ -20,10 +23,10 @@ public class ApiService {
 		restTemplate = new RestTemplateBuilder().additionalInterceptors(interceptor).build();
 	}
 
-	public SearchResponse search(String criteria) {
+	public List<Hit> search(String criteria) {
 
 		String url = "https://api.edamam.com/search" + "?&app_id=648e9787" + "&app_key=c89390753239eaff50f4d02bdc22eb63"
 				+ "&q=" + criteria;
-		return restTemplate.getForObject(url, SearchResponse.class);
+		return restTemplate.getForObject(url, SearchResponse.class).getHits();
 	}
 }

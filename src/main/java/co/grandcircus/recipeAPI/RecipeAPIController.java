@@ -1,5 +1,7 @@
 package co.grandcircus.recipeAPI;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import co.grandcircus.recipeAPI.entities.SearchResponse;
+import co.grandcircus.recipeAPI.entities.Hit;
 
 @Controller
 public class RecipeAPIController {
@@ -39,9 +41,9 @@ public class RecipeAPIController {
 	public ModelAndView submitSearchResponse(@RequestParam("label") String criteria) {
 
 		System.out.println("POSTsearch response page");
-		SearchResponse searchResponse = apiService.search(criteria);
+		List<Hit> hits = apiService.search(criteria);
 		System.out.println("search response page");
-		System.out.println(searchResponse);
-		return new ModelAndView("searchResponse", "response", searchResponse);
+		System.out.println(hits);
+		return new ModelAndView("searchResponse", "response", hits);
 	}
 }

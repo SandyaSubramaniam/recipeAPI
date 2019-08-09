@@ -9,11 +9,12 @@
 </head>
 <body>
 	<table border=1>
-		<c:forEach var="hit" items=" ${response.getHits()} ">
+	
+		<c:forEach var="hit" items="${response}">
 			<tr>
-				<td> ${ hit.getRecipe().getImage() } </td>
-				<td> ${ hit.getRecipe().getLabel() } </td>
-				<td> ${ hit.getRecipe().getCalories() } </td>
+				<td> ${ hit.recipe.image } </td>
+				<td> ${ hit.recipe.label } </td>
+				<td> ${ hit.recipe.calories } </td>
 				
 			</tr>
 		</c:forEach>

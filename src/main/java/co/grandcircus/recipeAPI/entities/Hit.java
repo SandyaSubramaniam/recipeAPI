@@ -26,7 +26,6 @@ public class Hit {
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	@JsonProperty("recipe")
 	public Recipe getRecipe() {
 
 		return recipe;
