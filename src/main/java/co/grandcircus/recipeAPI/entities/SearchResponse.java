@@ -134,4 +134,11 @@ public class SearchResponse {
 
 		this.additionalProperties.put(name, value);
 	}
+
+	@Override
+	public String toString() {
+
+		return "SearchResponse [q=" + q + ", from=" + from + ", to=" + to + ", params=" + params + ", more=" + more
+				+ ", count=" + count + ", hits=" + hits + ", additionalProperties=" + additionalProperties + "]";
+	}
 }

@@ -1,9 +1,9 @@
-
 package co.grandcircus.recipeAPI.entities;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -12,255 +12,304 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "uri",
-    "label",
-    "image",
-    "source",
-    "url",
-    "shareAs",
-    "yield",
-    "dietLabels",
-    "healthLabels",
-    "cautions",
-    "ingredientLines",
-    "ingredients",
-    "calories",
-    "totalWeight",
-    "totalTime",
-    "totalNutrients",
-    "totalDaily",
-    "digest"
-})
+@JsonPropertyOrder({ "uri", "label", "image", "source", "url", "shareAs", "yield", "dietLabels", "healthLabels",
+		"cautions", "ingredientLines", "ingredients", "calories", "totalWeight", "totalTime", "totalNutrients",
+		"totalDaily", "digest" })
 public class Recipe {
 
-    @JsonProperty("uri")
-    private String uri;
-    @JsonProperty("label")
-    private String label;
-    @JsonProperty("image")
-    private String image;
-    @JsonProperty("source")
-    private String source;
-    @JsonProperty("url")
-    private String url;
-    @JsonProperty("shareAs")
-    private String shareAs;
-    @JsonProperty("yield")
-    private Double yield;
-    @JsonProperty("dietLabels")
-    private List<Object> dietLabels = null;
-    @JsonProperty("healthLabels")
-    private List<String> healthLabels = null;
-    @JsonProperty("cautions")
-    private List<String> cautions = null;
-    @JsonProperty("ingredientLines")
-    private List<String> ingredientLines = null;
-    @JsonProperty("ingredients")
-    private List<Ingredient> ingredients = null;
-    @JsonProperty("calories")
-    private Double calories;
-    @JsonProperty("totalWeight")
-    private Double totalWeight;
-    @JsonProperty("totalTime")
-    private Double totalTime;
-    @JsonProperty("totalNutrients")
-    private TotalNutrients totalNutrients;
-    @JsonProperty("totalDaily")
-    private TotalDaily totalDaily;
-    @JsonProperty("digest")
-    private List<Digest> digest = null;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	@JsonProperty("uri")
+	private String uri;
 
-    @JsonProperty("uri")
-    public String getUri() {
-        return uri;
-    }
+	@JsonProperty("label")
+	private String label;
 
-    @JsonProperty("uri")
-    public void setUri(String uri) {
-        this.uri = uri;
-    }
+	@JsonProperty("image")
+	private String image;
 
-    @JsonProperty("label")
-    public String getLabel() {
-        return label;
-    }
+	@JsonProperty("source")
+	private String source;
 
-    @JsonProperty("label")
-    public void setLabel(String label) {
-        this.label = label;
-    }
+	@JsonProperty("url")
+	private String url;
 
-    @JsonProperty("image")
-    public String getImage() {
-        return image;
-    }
+	@JsonProperty("shareAs")
+	private String shareAs;
 
-    @JsonProperty("image")
-    public void setImage(String image) {
-        this.image = image;
-    }
+	@JsonProperty("yield")
+	private Double yield;
 
-    @JsonProperty("source")
-    public String getSource() {
-        return source;
-    }
+	@JsonProperty("dietLabels")
+	private List<Object> dietLabels = null;
 
-    @JsonProperty("source")
-    public void setSource(String source) {
-        this.source = source;
-    }
+	@JsonProperty("healthLabels")
+	private List<String> healthLabels = null;
 
-    @JsonProperty("url")
-    public String getUrl() {
-        return url;
-    }
+	@JsonProperty("cautions")
+	private List<String> cautions = null;
 
-    @JsonProperty("url")
-    public void setUrl(String url) {
-        this.url = url;
-    }
+	@JsonProperty("ingredientLines")
+	private List<String> ingredientLines = null;
 
-    @JsonProperty("shareAs")
-    public String getShareAs() {
-        return shareAs;
-    }
+	@JsonProperty("ingredients")
+	private List<Ingredient> ingredients = null;
 
-    @JsonProperty("shareAs")
-    public void setShareAs(String shareAs) {
-        this.shareAs = shareAs;
-    }
+	@JsonProperty("calories")
+	private Double calories;
 
-    @JsonProperty("yield")
-    public Double getYield() {
-        return yield;
-    }
+	@JsonProperty("totalWeight")
+	private Double totalWeight;
 
-    @JsonProperty("yield")
-    public void setYield(Double yield) {
-        this.yield = yield;
-    }
+	@JsonProperty("totalTime")
+	private Double totalTime;
 
-    @JsonProperty("dietLabels")
-    public List<Object> getDietLabels() {
-        return dietLabels;
-    }
+	@JsonProperty("totalNutrients")
+	private TotalNutrients totalNutrients;
 
-    @JsonProperty("dietLabels")
-    public void setDietLabels(List<Object> dietLabels) {
-        this.dietLabels = dietLabels;
-    }
+	@JsonProperty("totalDaily")
+	private TotalDaily totalDaily;
 
-    @JsonProperty("healthLabels")
-    public List<String> getHealthLabels() {
-        return healthLabels;
-    }
+	@JsonProperty("digest")
+	private List<Digest> digest = null;
 
-    @JsonProperty("healthLabels")
-    public void setHealthLabels(List<String> healthLabels) {
-        this.healthLabels = healthLabels;
-    }
+	@JsonIgnore
+	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("cautions")
-    public List<String> getCautions() {
-        return cautions;
-    }
+	@JsonProperty("uri")
+	public String getUri() {
 
-    @JsonProperty("cautions")
-    public void setCautions(List<String> cautions) {
-        this.cautions = cautions;
-    }
+		return uri;
+	}
 
-    @JsonProperty("ingredientLines")
-    public List<String> getIngredientLines() {
-        return ingredientLines;
-    }
+	@JsonProperty("uri")
+	public void setUri(String uri) {
 
-    @JsonProperty("ingredientLines")
-    public void setIngredientLines(List<String> ingredientLines) {
-        this.ingredientLines = ingredientLines;
-    }
+		this.uri = uri;
+	}
 
-    @JsonProperty("ingredients")
-    public List<Ingredient> getIngredients() {
-        return ingredients;
-    }
+	@JsonProperty("label")
+	public String getLabel() {
 
-    @JsonProperty("ingredients")
-    public void setIngredients(List<Ingredient> ingredients) {
-        this.ingredients = ingredients;
-    }
+		return label;
+	}
 
-    @JsonProperty("calories")
-    public Double getCalories() {
-        return calories;
-    }
+	@JsonProperty("label")
+	public void setLabel(String label) {
 
-    @JsonProperty("calories")
-    public void setCalories(Double calories) {
-        this.calories = calories;
-    }
+		this.label = label;
+	}
 
-    @JsonProperty("totalWeight")
-    public Double getTotalWeight() {
-        return totalWeight;
-    }
+	@JsonProperty("image")
+	public String getImage() {
 
-    @JsonProperty("totalWeight")
-    public void setTotalWeight(Double totalWeight) {
-        this.totalWeight = totalWeight;
-    }
+		return image;
+	}
 
-    @JsonProperty("totalTime")
-    public Double getTotalTime() {
-        return totalTime;
-    }
+	@JsonProperty("image")
+	public void setImage(String image) {
 
-    @JsonProperty("totalTime")
-    public void setTotalTime(Double totalTime) {
-        this.totalTime = totalTime;
-    }
+		this.image = image;
+	}
 
-    @JsonProperty("totalNutrients")
-    public TotalNutrients getTotalNutrients() {
-        return totalNutrients;
-    }
+	@JsonProperty("source")
+	public String getSource() {
 
-    @JsonProperty("totalNutrients")
-    public void setTotalNutrients(TotalNutrients totalNutrients) {
-        this.totalNutrients = totalNutrients;
-    }
+		return source;
+	}
 
-    @JsonProperty("totalDaily")
-    public TotalDaily getTotalDaily() {
-        return totalDaily;
-    }
+	@JsonProperty("source")
+	public void setSource(String source) {
 
-    @JsonProperty("totalDaily")
-    public void setTotalDaily(TotalDaily totalDaily) {
-        this.totalDaily = totalDaily;
-    }
+		this.source = source;
+	}
 
-    @JsonProperty("digest")
-    public List<Digest> getDigest() {
-        return digest;
-    }
+	@JsonProperty("url")
+	public String getUrl() {
 
-    @JsonProperty("digest")
-    public void setDigest(List<Digest> digest) {
-        this.digest = digest;
-    }
+		return url;
+	}
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+	@JsonProperty("url")
+	public void setUrl(String url) {
 
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+		this.url = url;
+	}
 
+	@JsonProperty("shareAs")
+	public String getShareAs() {
+
+		return shareAs;
+	}
+
+	@JsonProperty("shareAs")
+	public void setShareAs(String shareAs) {
+
+		this.shareAs = shareAs;
+	}
+
+	@JsonProperty("yield")
+	public Double getYield() {
+
+		return yield;
+	}
+
+	@JsonProperty("yield")
+	public void setYield(Double yield) {
+
+		this.yield = yield;
+	}
+
+	@JsonProperty("dietLabels")
+	public List<Object> getDietLabels() {
+
+		return dietLabels;
+	}
+
+	@JsonProperty("dietLabels")
+	public void setDietLabels(List<Object> dietLabels) {
+
+		this.dietLabels = dietLabels;
+	}
+
+	@JsonProperty("healthLabels")
+	public List<String> getHealthLabels() {
+
+		return healthLabels;
+	}
+
+	@JsonProperty("healthLabels")
+	public void setHealthLabels(List<String> healthLabels) {
+
+		this.healthLabels = healthLabels;
+	}
+
+	@JsonProperty("cautions")
+	public List<String> getCautions() {
+
+		return cautions;
+	}
+
+	@JsonProperty("cautions")
+	public void setCautions(List<String> cautions) {
+
+		this.cautions = cautions;
+	}
+
+	@JsonProperty("ingredientLines")
+	public List<String> getIngredientLines() {
+
+		return ingredientLines;
+	}
+
+	@JsonProperty("ingredientLines")
+	public void setIngredientLines(List<String> ingredientLines) {
+
+		this.ingredientLines = ingredientLines;
+	}
+
+	@JsonProperty("ingredients")
+	public List<Ingredient> getIngredients() {
+
+		return ingredients;
+	}
+
+	@JsonProperty("ingredients")
+	public void setIngredients(List<Ingredient> ingredients) {
+
+		this.ingredients = ingredients;
+	}
+
+	@JsonProperty("calories")
+	public Double getCalories() {
+
+		return calories;
+	}
+
+	@JsonProperty("calories")
+	public void setCalories(Double calories) {
+
+		this.calories = calories;
+	}
+
+	@JsonProperty("totalWeight")
+	public Double getTotalWeight() {
+
+		return totalWeight;
+	}
+
+	@JsonProperty("totalWeight")
+	public void setTotalWeight(Double totalWeight) {
+
+		this.totalWeight = totalWeight;
+	}
+
+	@JsonProperty("totalTime")
+	public Double getTotalTime() {
+
+		return totalTime;
+	}
+
+	@JsonProperty("totalTime")
+	public void setTotalTime(Double totalTime) {
+
+		this.totalTime = totalTime;
+	}
+
+	@JsonProperty("totalNutrients")
+	public TotalNutrients getTotalNutrients() {
+
+		return totalNutrients;
+	}
+
+	@JsonProperty("totalNutrients")
+	public void setTotalNutrients(TotalNutrients totalNutrients) {
+
+		this.totalNutrients = totalNutrients;
+	}
+
+	@JsonProperty("totalDaily")
+	public TotalDaily getTotalDaily() {
+
+		return totalDaily;
+	}
+
+	@JsonProperty("totalDaily")
+	public void setTotalDaily(TotalDaily totalDaily) {
+
+		this.totalDaily = totalDaily;
+	}
+
+	@JsonProperty("digest")
+	public List<Digest> getDigest() {
+
+		return digest;
+	}
+
+	@JsonProperty("digest")
+	public void setDigest(List<Digest> digest) {
+
+		this.digest = digest;
+	}
+
+	@JsonAnyGetter
+	public Map<String, Object> getAdditionalProperties() {
+
+		return this.additionalProperties;
+	}
+
+	@JsonAnySetter
+	public void setAdditionalProperty(String name, Object value) {
+
+		this.additionalProperties.put(name, value);
+	}
+
+	@Override
+	public String toString() {
+
+		return "Recipe [uri=" + uri + ", label=" + label + ", image=" + image + ", source=" + source + ", url=" + url
+				+ ", shareAs=" + shareAs + ", yield=" + yield + ", dietLabels=" + dietLabels + ", healthLabels="
+				+ healthLabels + ", cautions=" + cautions + ", ingredientLines=" + ingredientLines + ", ingredients="
+				+ ingredients + ", calories=" + calories + ", totalWeight=" + totalWeight + ", totalTime=" + totalTime
+				+ ", totalNutrients=" + totalNutrients + ", totalDaily=" + totalDaily + ", digest=" + digest
+				+ ", additionalProperties=" + additionalProperties + "]";
+	}
 }

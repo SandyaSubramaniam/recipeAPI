@@ -1,8 +1,8 @@
-
 package co.grandcircus.recipeAPI.entities;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,112 +11,134 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "label",
-    "tag",
-    "schemaOrgTag",
-    "total",
-    "hasRDI",
-    "daily",
-    "unit"
-})
+@JsonPropertyOrder({ "label", "tag", "schemaOrgTag", "total", "hasRDI", "daily", "unit" })
 public class Sub {
 
-    @JsonProperty("label")
-    private String label;
-    @JsonProperty("tag")
-    private String tag;
-    @JsonProperty("schemaOrgTag")
-    private Object schemaOrgTag;
-    @JsonProperty("total")
-    private Double total;
-    @JsonProperty("hasRDI")
-    private Boolean hasRDI;
-    @JsonProperty("daily")
-    private Double daily;
-    @JsonProperty("unit")
-    private String unit;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	@JsonProperty("label")
+	private String label;
 
-    @JsonProperty("label")
-    public String getLabel() {
-        return label;
-    }
+	@JsonProperty("tag")
+	private String tag;
 
-    @JsonProperty("label")
-    public void setLabel(String label) {
-        this.label = label;
-    }
+	@JsonProperty("schemaOrgTag")
+	private Object schemaOrgTag;
 
-    @JsonProperty("tag")
-    public String getTag() {
-        return tag;
-    }
+	@JsonProperty("total")
+	private Double total;
 
-    @JsonProperty("tag")
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
+	@JsonProperty("hasRDI")
+	private Boolean hasRDI;
 
-    @JsonProperty("schemaOrgTag")
-    public Object getSchemaOrgTag() {
-        return schemaOrgTag;
-    }
+	@JsonProperty("daily")
+	private Double daily;
 
-    @JsonProperty("schemaOrgTag")
-    public void setSchemaOrgTag(Object schemaOrgTag) {
-        this.schemaOrgTag = schemaOrgTag;
-    }
+	@JsonProperty("unit")
+	private String unit;
 
-    @JsonProperty("total")
-    public Double getTotal() {
-        return total;
-    }
+	@JsonIgnore
+	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("total")
-    public void setTotal(Double total) {
-        this.total = total;
-    }
+	@JsonProperty("label")
+	public String getLabel() {
 
-    @JsonProperty("hasRDI")
-    public Boolean getHasRDI() {
-        return hasRDI;
-    }
+		return label;
+	}
 
-    @JsonProperty("hasRDI")
-    public void setHasRDI(Boolean hasRDI) {
-        this.hasRDI = hasRDI;
-    }
+	@JsonProperty("label")
+	public void setLabel(String label) {
 
-    @JsonProperty("daily")
-    public Double getDaily() {
-        return daily;
-    }
+		this.label = label;
+	}
 
-    @JsonProperty("daily")
-    public void setDaily(Double daily) {
-        this.daily = daily;
-    }
+	@JsonProperty("tag")
+	public String getTag() {
 
-    @JsonProperty("unit")
-    public String getUnit() {
-        return unit;
-    }
+		return tag;
+	}
 
-    @JsonProperty("unit")
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
+	@JsonProperty("tag")
+	public void setTag(String tag) {
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+		this.tag = tag;
+	}
 
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+	@JsonProperty("schemaOrgTag")
+	public Object getSchemaOrgTag() {
 
+		return schemaOrgTag;
+	}
+
+	@JsonProperty("schemaOrgTag")
+	public void setSchemaOrgTag(Object schemaOrgTag) {
+
+		this.schemaOrgTag = schemaOrgTag;
+	}
+
+	@JsonProperty("total")
+	public Double getTotal() {
+
+		return total;
+	}
+
+	@JsonProperty("total")
+	public void setTotal(Double total) {
+
+		this.total = total;
+	}
+
+	@JsonProperty("hasRDI")
+	public Boolean getHasRDI() {
+
+		return hasRDI;
+	}
+
+	@JsonProperty("hasRDI")
+	public void setHasRDI(Boolean hasRDI) {
+
+		this.hasRDI = hasRDI;
+	}
+
+	@JsonProperty("daily")
+	public Double getDaily() {
+
+		return daily;
+	}
+
+	@JsonProperty("daily")
+	public void setDaily(Double daily) {
+
+		this.daily = daily;
+	}
+
+	@JsonProperty("unit")
+	public String getUnit() {
+
+		return unit;
+	}
+
+	@JsonProperty("unit")
+	public void setUnit(String unit) {
+
+		this.unit = unit;
+	}
+
+	@JsonAnyGetter
+	public Map<String, Object> getAdditionalProperties() {
+
+		return this.additionalProperties;
+	}
+
+	@JsonAnySetter
+	public void setAdditionalProperty(String name, Object value) {
+
+		this.additionalProperties.put(name, value);
+	}
+
+	@Override
+	public String toString() {
+
+		return "Sub [label=" + label + ", tag=" + tag + ", schemaOrgTag=" + schemaOrgTag + ", total=" + total
+				+ ", hasRDI=" + hasRDI + ", daily=" + daily + ", unit=" + unit + ", additionalProperties="
+				+ additionalProperties + "]";
+	}
 }

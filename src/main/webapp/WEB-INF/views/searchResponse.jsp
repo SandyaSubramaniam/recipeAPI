@@ -11,9 +11,9 @@
 	<table border=1>
 		<c:forEach var="hit" items=" ${response.getHits()} ">
 			<tr>
-				<td>${hit.getRecipe().getImage()}</td>
-				<td>${hit.getRecipe().getLabel()}</td>
-				<td>${hit.getRecipe().getCalories()}</td>
+				<td> ${ hit.getRecipe().getImage() } </td>
+				<td> ${ hit.getRecipe().getLabel() } </td>
+				<td> ${ hit.getRecipe().getCalories() } </td>
 				
 			</tr>
 		</c:forEach>

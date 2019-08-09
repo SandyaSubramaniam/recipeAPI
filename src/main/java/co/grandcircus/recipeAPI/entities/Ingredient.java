@@ -1,57 +1,55 @@
-
 package co.grandcircus.recipeAPI.entities;
 
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "text",
-    "weight"
-})
+@JsonPropertyOrder({ "text", "weight" })
 public class Ingredient {
 
-    @JsonProperty("text")
-    private String text;
-    @JsonProperty("weight")
-    private Double weight;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	private String text;
 
-    @JsonProperty("text")
-    public String getText() {
-        return text;
-    }
+	private Double weight;
 
-    @JsonProperty("text")
-    public void setText(String text) {
-        this.text = text;
-    }
+	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("weight")
-    public Double getWeight() {
-        return weight;
-    }
+	public String getText() {
 
-    @JsonProperty("weight")
-    public void setWeight(Double weight) {
-        this.weight = weight;
-    }
+		return text;
+	}
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+	public void setText(String text) {
 
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+		this.text = text;
+	}
 
+	public Double getWeight() {
+
+		return weight;
+	}
+
+	public void setWeight(Double weight) {
+
+		this.weight = weight;
+	}
+
+	public Map<String, Object> getAdditionalProperties() {
+
+		return this.additionalProperties;
+	}
+
+	public void setAdditionalProperty(String name, Object value) {
+
+		this.additionalProperties.put(name, value);
+	}
+
+	@Override
+	public String toString() {
+
+		return "Ingredient [text=" + text + ", weight=" + weight + ", additionalProperties=" + additionalProperties
+				+ "]";
+	}
 }
