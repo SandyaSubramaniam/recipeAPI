@@ -1,5 +1,5 @@
 
-package co.grandcircus.generatedpojos;
+package co.grandcircus.recipeAPI.entities;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,49 +12,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "label",
-    "quantity",
-    "unit"
+    "text",
+    "weight"
 })
-public class TotalValue {
+public class Ingredient {
 
-    @JsonProperty("label")
-    private String label;
-    @JsonProperty("quantity")
-    private Double quantity;
-    @JsonProperty("unit")
-    private String unit;
+    @JsonProperty("text")
+    private String text;
+    @JsonProperty("weight")
+    private Double weight;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("label")
-    public String getLabel() {
-        return label;
+    @JsonProperty("text")
+    public String getText() {
+        return text;
     }
 
-    @JsonProperty("label")
-    public void setLabel(String label) {
-        this.label = label;
+    @JsonProperty("text")
+    public void setText(String text) {
+        this.text = text;
     }
 
-    @JsonProperty("quantity")
-    public Double getQuantity() {
-        return quantity;
+    @JsonProperty("weight")
+    public Double getWeight() {
+        return weight;
     }
 
-    @JsonProperty("quantity")
-    public void setQuantity(Double quantity) {
-        this.quantity = quantity;
-    }
-
-    @JsonProperty("unit")
-    public String getUnit() {
-        return unit;
-    }
-
-    @JsonProperty("unit")
-    public void setUnit(String unit) {
-        this.unit = unit;
+    @JsonProperty("weight")
+    public void setWeight(Double weight) {
+        this.weight = weight;
     }
 
     @JsonAnyGetter

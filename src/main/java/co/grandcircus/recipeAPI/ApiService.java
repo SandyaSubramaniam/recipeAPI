@@ -6,7 +6,7 @@ import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import co.grandcircus.generatedpojos.SearchResponse;
+import co.grandcircus.recipeAPI.entities.SearchResponse;
 
 @Component
 public class ApiService {

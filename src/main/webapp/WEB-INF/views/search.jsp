@@ -17,7 +17,7 @@
 	
 	<form action = "/search-response">
 	<label>Title</label>
-	<input name="title" type="text"/>
+	<input name="label"  type="text"/>
 	
 	
 	

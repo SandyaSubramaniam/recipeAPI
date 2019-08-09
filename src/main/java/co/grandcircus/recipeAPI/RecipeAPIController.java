@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import co.grandcircus.generatedpojos.SearchResponse;
+import co.grandcircus.recipeAPI.entities.SearchResponse;
 
 @Controller
 public class RecipeAPIController {
@@ -28,17 +28,20 @@ public class RecipeAPIController {
 	}
 
 	@GetMapping("/search-response")
-	public ModelAndView showSearchResponse(@RequestParam("title") String criteria) {
+	public ModelAndView showSearchResponse(@RequestParam("label") String criteria) {
 
-		System.out.println("search response page");
-		return new ModelAndView("searchResponse", "response", criteria);
+		System.out.println("GETsearch response page");
+		return new ModelAndView("searchResponse");
 	}
 
 	@PostMapping("/search-response")
-	public ModelAndView submitSearchResponse(@RequestParam String criteria) {
+	public ModelAndView submitSearchResponse(@RequestParam("label") String criteria) {
 
-		System.out.println("search response page");
+		System.out.println("POSTsearch response page");
 		SearchResponse searchResponse = apiService.search(criteria);
+		System.out.println("search response page");
+		System.out.println(searchResponse);
+//		List<Hit> response = searchResponse.getHits();
 		return new ModelAndView("searchResponse", "response", searchResponse);
 	}
 }

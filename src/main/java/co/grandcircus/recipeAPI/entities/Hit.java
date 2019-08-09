@@ -1,5 +1,5 @@
 
-package co.grandcircus.generatedpojos;
+package co.grandcircus.recipeAPI.entities;
 
 import java.util.HashMap;
 import java.util.Map;
