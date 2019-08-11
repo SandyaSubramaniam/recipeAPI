@@ -15,7 +15,20 @@
 <body>
 	<h1>Please select a search category</h1>
 	<form method="post" action="/search-response">
-		<label>Title</label> <input name="label" type="text" />
+	<p>
+		<label>Title</label> <input name="label" type="text" /></p>
+	<p>	<label>Calories less than</label> <input name="calories" type="number"/></p>
+		<p><label>Dietary Preferences</label></p>
+					
+			<p>	<select name="diet">
+			<option value=""></option>
+				<option value="balanced">balanced</option>
+				<option value="high-fiber">high-fiber</option>
+				<option value="high-protein">high-protein</option>
+				<option value="low-carb">low-carb</option>
+				<option value="low-fat">low-fat</option>
+			</select>
+		</p>
 		<button type="submit" class="btn btn-primary">Go!</button>
 	</form>
 </body>
