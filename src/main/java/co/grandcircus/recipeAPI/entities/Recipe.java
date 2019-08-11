@@ -1,5 +1,6 @@
 package co.grandcircus.recipeAPI.entities;
 
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,6 +55,11 @@ public class Recipe {
 	public String getUri() {
 
 		return uri;
+	}
+
+	public String getUriEncoded() {
+
+		return URLEncoder.encode(getUri());
 	}
 
 	public void setUri(String uri) {

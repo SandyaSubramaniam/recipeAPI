@@ -1,5 +1,7 @@
 package co.grandcircus.recipeAPI;
 
+import java.net.URLEncoder;
+
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
+import co.grandcircus.recipeAPI.entities.Recipe;
 import co.grandcircus.recipeAPI.entities.SearchResponse;
 
 @Component
@@ -34,5 +37,18 @@ public class ApiService {
 			System.err.println(ex.getMessage());
 		}
 		return searchResponse;
+	}
+
+	public Recipe getRecipe(String uri) {
+
+		String url = "https://api.edamam.com/search" + "?&app_id=648e9787&app_key=c89390753239eaff50f4d02bdc22eb63"
+				+ (StringUtils.isEmpty(uri) ? "" : "&r=" + URLEncoder.encode(uri));
+		Recipe recipe = null;
+		try {
+			recipe = restTemplate.getForObject(url, Recipe.class);
+		} catch (Exception ex) {
+			System.err.println(ex.getMessage());
+		}
+		return recipe;
 	}
 }

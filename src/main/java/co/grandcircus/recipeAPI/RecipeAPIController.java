@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import co.grandcircus.recipeAPI.entities.Recipe;
 import co.grandcircus.recipeAPI.entities.SearchResponse;
 
 @Controller
@@ -51,8 +52,9 @@ public class RecipeAPIController {
 	}
 
 	@RequestMapping("/details")
-	public ModelAndView showDetails(@RequestParam("label") String label) {
+	public ModelAndView showDetails(@RequestParam("uri") String uri) {
 
-		return new ModelAndView("details");
+		Recipe recipe = apiService.getRecipe(uri);
+		return new ModelAndView("details", "recipe ", recipe);
 	}
 }
