@@ -15,6 +15,7 @@
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 <title>Display Results</title>
+
 </head>
 <body>
 	<div class="container">
@@ -27,6 +28,10 @@
 						</h1>
 					</c:when>
 					<c:otherwise>
+					<h3 align="center">Recipes</h3>
+						<h4 align="right">
+							<a href="/search">Back to Search</a>
+						</h4>
 						<table border=1>
 							<thead class="thead">
 								<tr>
